@@ -1,101 +1,144 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Brain, Target, Trophy, Users } from 'lucide-react';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    return (
+        <div className="flex flex-col min-h-screen">
+            {/* Hero Section */}
+            <section className="pt-24 pb-12 px-4 md:pt-32 md:pb-20">
+                <div className="container mx-auto text-center">
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+                        Master Your AMCAT Journey
+                    </h1>
+                    <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Prepare smarter, score higher. Join thousands of
+                        successful candidates who've aced their AMCAT with our
+                        AI-powered platform.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link href="/sign-up">
+                            <Button size="lg" className="w-full sm:w-auto">
+                                Start Practicing Now
+                            </Button>
+                        </Link>
+                        <Link href="/pricing">
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="w-full sm:w-auto"
+                            >
+                                View Plans
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {/* Features Section */}
+            <section className="py-12 px-4 bg-muted/50">
+                <div className="container mx-auto">
+                    <h2 className="text-3xl font-bold text-center mb-12">
+                        Why Choose Us?
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <Card className="p-6">
+                            <Brain className="h-12 w-12 mb-4 text-primary" />
+                            <h3 className="text-xl font-semibold mb-2">
+                                AI-Powered Learning
+                            </h3>
+                            <p className="text-muted-foreground">
+                                Personalized practice sessions adapted to your
+                                learning pace and style.
+                            </p>
+                        </Card>
+                        <Card className="p-6">
+                            <Target className="h-12 w-12 mb-4 text-primary" />
+                            <h3 className="text-xl font-semibold mb-2">
+                                Targeted Practice
+                            </h3>
+                            <p className="text-muted-foreground">
+                                Focus on your weak areas with our smart analysis
+                                and recommendations.
+                            </p>
+                        </Card>
+                        <Card className="p-6">
+                            <Trophy className="h-12 w-12 mb-4 text-primary" />
+                            <h3 className="text-xl font-semibold mb-2">
+                                Proven Results
+                            </h3>
+                            <p className="text-muted-foreground">
+                                Join thousands of successful candidates who
+                                achieved their dream scores.
+                            </p>
+                        </Card>
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className="py-12 px-4">
+                <div className="container mx-auto">
+                    <h2 className="text-3xl font-bold text-center mb-12">
+                        Success Stories
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <Card className="p-6">
+                            <div className="flex items-start gap-4">
+                                <div className="rounded-full bg-primary/10 p-3">
+                                    <Users className="h-6 w-6 text-primary" />
+                                </div>
+                                <div>
+                                    <p className="italic mb-4">
+                                        "The practice tests were incredibly
+                                        helpful. I improved my score by 30% in
+                                        just two weeks!"
+                                    </p>
+                                    <p className="font-semibold">Sarah P.</p>
+                                    <p className="text-sm text-muted-foreground">
+                                        Software Engineer
+                                    </p>
+                                </div>
+                            </div>
+                        </Card>
+                        <Card className="p-6">
+                            <div className="flex items-start gap-4">
+                                <div className="rounded-full bg-primary/10 p-3">
+                                    <Users className="h-6 w-6 text-primary" />
+                                </div>
+                                <div>
+                                    <p className="italic mb-4">
+                                        "The AI-powered recommendations helped
+                                        me focus on areas where I needed
+                                        improvement the most."
+                                    </p>
+                                    <p className="font-semibold">Mike R.</p>
+                                    <p className="text-sm text-muted-foreground">
+                                        Data Analyst
+                                    </p>
+                                </div>
+                            </div>
+                        </Card>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-12 px-4 bg-primary text-primary-foreground">
+                <div className="container mx-auto text-center">
+                    <h2 className="text-3xl font-bold mb-6">Ready to Excel?</h2>
+                    <p className="text-xl mb-8 opacity-90">
+                        Join our platform today and take the first step towards
+                        your dream career.
+                    </p>
+                    <Link href="/sign-up">
+                        <Button size="lg" variant="secondary">
+                            Get Started Free
+                        </Button>
+                    </Link>
+                </div>
+            </section>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
